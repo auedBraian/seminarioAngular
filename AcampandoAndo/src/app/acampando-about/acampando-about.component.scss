@@ -1,0 +1,35 @@
+section{ 
+    display: flex;
+    justify-content: space-between;
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+}
+
+h1,h3{
+    color:orangered;
+}
+h4{
+    font-style:italic ;
+    font-size: bold;
+}
+.cuerpo{
+    width: 80%;
+    margin: 0px 2px 0px 0px; 
+}
+
+.lista-cuerpo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+
+aside{ 
+    width: 20%;
+    height: 800px;
+    background-image: url("/assets/distribuciontandil/marcas2.jpg");
+    background-repeat: no-repeat;
+    background-size: 105% 105%;
+    margin-right: 0px;
+    padding-right: 0px;
+}
+

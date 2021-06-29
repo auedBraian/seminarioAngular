@@ -1,0 +1,9 @@
+<h3>Carrito de compras</h3>
+<div class="carritoPpal">
+<ul>
+    <li *ngFor="let producto of listaProductos$ | async ">
+        {{producto.articulo}} = {{producto.cantidad}} x {{producto.precio | currency}}
+    </li>
+</ul>
+</div>
+<td><button class="btn btn-primary" [routerLink]="['/payment']">Continuar al pago</button></td>

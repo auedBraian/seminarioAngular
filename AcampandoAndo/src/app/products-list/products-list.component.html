@@ -1,0 +1,30 @@
+<table class='table text-center'>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Marca</th>
+            <th>Material</th>
+            <th>Imperm</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Compra</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of productos" [ngClass]="{'clearance':producto.clearance}">
+            <td><img class="img-thumbnail" src={{producto.image}} alt="producto.image"></td>
+            <td>{{producto.articulo | uppercase}}</td>
+            <!--td>{{producto.capacidad}}</td -->
+            <td>{{producto.material }}</td>
+            <td>{{producto.imperm}}</td>
+            <td>{{producto.precio | currency}}</td>
+            <td>
+                <app-input-integer [(cantidad)]="producto.cantidad" [maximo]="producto.stock" *ngIf="producto.stock"
+                    (maxReached)="maxReached($event)"></app-input-integer>
+            </td>
+            <span class="badge bg-danger" *ngIf="producto.stock==0">Sin Stock</span>
+            <td><button class="btn btn-primary" (click)="agregarAlcarrito(producto)"
+                    *ngIf="producto.stock">Comprar</button></td>
+        </tr>
+    </tbody>
+</table>
